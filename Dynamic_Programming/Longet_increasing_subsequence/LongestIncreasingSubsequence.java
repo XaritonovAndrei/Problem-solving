@@ -19,6 +19,7 @@ package com.problem_solving.Dynamic_Programming.Longet_increasing_subsequence;
 //Output: 1
 
 import java.util.Arrays;
+import java.util.List;
 
 public class LongestIncreasingSubsequence {
     public static void main(String[] args) {
@@ -35,14 +36,16 @@ class LongestIncreasingSubsequenceSolution {
             Arrays.fill(Lis, 1);
             int max=1;
 
-            for(int i=1; i<nums.length; i++){
-                for(int j=0; j<i; j++){
-                    if(nums[i] > nums[j]){
-                        Lis[i] = Math.max(Lis[i], 1+Lis[j]);
+            for (int i = 1; i < nums.length; i++) {
+                for (int j = i - 1; j >= 0; j--) {
+                    if (nums[j] < nums[j + 1]) {
+                        Lis[i] = Lis[i] + 1;
                         max = Math.max(max, Lis[i]);
                     }
                 }
             }
+
+            System.out.println(Arrays.toString(Lis));
             return max;
         }
     }
