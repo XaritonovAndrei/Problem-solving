@@ -77,47 +77,4 @@ public class FirstAndLastPositionOfElementInSortedArray {
         }
         return resultID;
     }
-//    public static int findFirstPos(int[] nums, int target) {
-//        int startIndex = 0;
-//        int endIndex = nums.length - 1;
-//        int resultID = -1;
-//
-//        while(startIndex <= endIndex) {
-
-//            int midIndex = (endIndex - startIndex) / 2;
-
-//            if(nums[midIndex] < target) {
-//                startIndex = midIndex + 1;
-//            }
-//            else if(nums[midIndex] > target) {
-//                endIndex = midIndex - 1;
-//            }
-//            else { // nums[mid] == target
-//                resultID = midIndex;
-//                endIndex = midIndex - 1;
-//            }
-//        }
-//        return resultID;
-//    }
-//
-//    public static int findLastPos(int[] nums, int target) {
-//        int startIndex = 0;
-//        int endIndex = nums.length - 1;
-//        int resultID = -1;
-//
-//        while(startIndex <= endIndex) {
-//            int midIndex = (endIndex - startIndex) / 2;
-//            if(nums[midIndex] < target) {
-//                startIndex = midIndex + 1;
-//            }
-//            else if(nums[midIndex] > target) {
-//                endIndex = midIndex - 1;
-//            }
-//            else { // nums[mid] == target
-//                resultID = midIndex;
-//                startIndex = midIndex + 1;
-//            }
-//        }
-//        return resultID;
-//    }
 }
