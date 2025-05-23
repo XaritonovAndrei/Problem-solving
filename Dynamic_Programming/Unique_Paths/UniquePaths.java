@@ -29,6 +29,7 @@ public class UniquePaths {
     public static void main(String[] args) {
         int m = 7, n = 3;
         System.out.println(uniquePaths(m, n));
+        System.out.println(uniquePathsRecursive(m, n));
     }
 
 
@@ -47,6 +48,25 @@ public class UniquePaths {
 
         return dp[m-1][n-1];
     }
+
+    Map<String, Integer> map = new HashMap<String, Integer>();
+    public int uniquePathsRecursive(int m, int n) {
+        // Map<String, Integer> map = new HashMap<String, Integer>();
+        
+        if(m == 1 || n == 1) return 1;
+        
+        String cell = new String(m + "," + n);
+        if(map.containsKey(cell)) {
+            return map.get(cell);
+        }
+        
+        int upMove = uniquePathsRecursive(m-1, n);
+        int leftMove = uniquePathsRecursive(m, n-1);
+        
+        map.put(cell, upMove + leftMove);
+        
+        return upMove + leftMove;
+    }   
 }
 
 
